@@ -8,7 +8,7 @@ export default function Dashboard() {
             <Grid>
                 <GridRow>
                     <Grid.Column width={4}>
-                        <Sidebar/>
+                        <Sidebar />
                     </Grid.Column>
                     <Grid.Column width={12}>
                     </Grid.Column>

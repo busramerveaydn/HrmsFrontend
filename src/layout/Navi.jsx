@@ -1,23 +1,31 @@
-import React from 'react'
-import { Button, Container, Menu } from 'semantic-ui-react'
-import Profile from './Profile'
-
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import {  Container, Menu } from 'semantic-ui-react'
+import SignedOut from './SignedOut'
+import SignedIn from './SignedIn'
 
 export default function Navi() {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(true)
+    const history = useHistory()
+    function handleSignOut(params) {
+        setIsAuthenticated(false)
+    }
+
+    function handleSignIn(params) {
+        setIsAuthenticated(true)
+    }
     return (
         <div>
-            <Menu inverted fixed="top">
+            <Menu inverted >
                 <Container>
                     <Menu.Item
                         icon="home"
-                        name='Ana Sayfa'
-
-                    />
+                        name='Ana Sayfa'                    />
                     <Menu.Menu position='right'>
-                        <Profile></Profile>
                         <Menu.Item>
-                            <Button primary>Çıkış Yap</Button>
-                        </Menu.Item>
+                        {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut singIn={handleSignIn} />}
+                    </Menu.Item>
                     </Menu.Menu>
                 </Container>
             </Menu>

@@ -1,13 +1,14 @@
 import React from 'react'
+import { Dropdown, Menu } from 'semantic-ui-react'
 import { Icon, Label } from 'semantic-ui-react'
-import {  Dropdown } from 'semantic-ui-react'
 
-export default function Profile() {
+export default function SignedIn(props) {
     return (
         <div>
-            <Dropdown item text='Büşra Merve Aydın' >
-                <Dropdown.Menu>
-                    <Dropdown.Item>Profil</Dropdown.Item>
+            <Menu.Item>
+                <Dropdown pointing="top left" text="Büşra merve Aydın">
+                    
+                    <Dropdown.Menu>
                     <Dropdown.Item>CV</Dropdown.Item>
                     <Dropdown.Item>Başvurularım</Dropdown.Item>
                     <Dropdown.Item>
@@ -17,8 +18,12 @@ export default function Profile() {
                              </Label>
                     </Dropdown.Item>
                     <Dropdown.Item>Ayarlar</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+                        <Dropdown.Item text="Bilgilerim" icon="info"/>
+                        <Dropdown.Item onClick={props.signOut} text="Çıkış Yap" icon="sign-out"/>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+            </Menu.Item>
         </div>
     )
 }
