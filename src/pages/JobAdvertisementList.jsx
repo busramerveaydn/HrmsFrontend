@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import JobadvertisementServices from '../services/jobadvertisementService'
-import { Icon, Menu, Table } from 'semantic-ui-react'
+import {Table } from 'semantic-ui-react'
 
 export default function JobAdvertisementList() {
 
@@ -8,7 +8,9 @@ export default function JobAdvertisementList() {
 
     useEffect(() => {
         let jobadvertisementService = new JobadvertisementServices()
-        jobadvertisementService.getJobAdvertisements().then(result => setJobAdvertisements(result.data.data))
+        jobadvertisementService.getJobAdvertisements().then(result => {
+            setJobAdvertisements(result.data.data)
+        })
     }, [])
 
     return (
@@ -16,40 +18,28 @@ export default function JobAdvertisementList() {
             <Table celled>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Ürin Adı</Table.HeaderCell>
-                        <Table.HeaderCell>Birim Fiyatı</Table.HeaderCell>
-                        <Table.HeaderCell>Stok Adedi</Table.HeaderCell>
                         <Table.HeaderCell>Açıklama</Table.HeaderCell>
-                        <Table.HeaderCell>Kategori</Table.HeaderCell>
+                        <Table.HeaderCell>Açık Pozisyon Sayısı</Table.HeaderCell>
+                        <Table.HeaderCell>Minimum Maaş</Table.HeaderCell>
+                        <Table.HeaderCell>Maksimum Maaş</Table.HeaderCell>
+                        <Table.HeaderCell>Son Başvuru Tarihi</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
                 <Table.Body>
                     {
                         jobAdvertisements.map((jobAdvertisement) => (
+
                             <Table.Row key={jobAdvertisement.id}>
+                            <Table.Cell>{jobAdvertisement.description}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.quota}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.minSalary}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.maxSalary}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.applicationDeadLine}</Table.Cell>
                             </Table.Row>
                         ))
                     }
                 </Table.Body>
-                <Table.Footer>
-                    <Table.Row>
-                        <Table.HeaderCell colSpan='3'>
-                            <Menu floated='right' pagination>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron left' />
-                                </Menu.Item>
-                                <Menu.Item as='a'>1</Menu.Item>
-                                <Menu.Item as='a'>2</Menu.Item>
-                                <Menu.Item as='a'>3</Menu.Item>
-                                <Menu.Item as='a'>4</Menu.Item>
-                                <Menu.Item as='a' icon>
-                                    <Icon name='chevron right' />
-                                </Menu.Item>
-                            </Menu>
-                        </Table.HeaderCell>
-                    </Table.Row>
-                </Table.Footer>
             </Table>
         </div>
     )
