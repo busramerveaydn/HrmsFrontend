@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import JobadvertisementServices from '../services/jobadvertisementService'
 import {Button, Table } from 'semantic-ui-react'
 import {Link} from "react-router-dom";
+import CityService from "../services/cityService";
 
 
 
 
 export default function JobAdvertisementList() {
 
-
+    const [cities, setCities] = useState([])
 
     const [jobAdvertisements, setJobAdvertisements] = useState([])
 
@@ -20,16 +21,23 @@ export default function JobAdvertisementList() {
         })
     }, [])
 
+    useEffect(()=>{
+        let citiesService = new CityService()
+        citiesService.getCities().then(result=>{
+            setCities(result.data.data)
+        })
+    })
 
     return (
         <div>
-            <Table celled>
+            <Table celled color={"red"}>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Açıklama</Table.HeaderCell>
                         <Table.HeaderCell>Açık Pozisyon Sayısı</Table.HeaderCell>
                         <Table.HeaderCell>Minimum Maaş</Table.HeaderCell>
                         <Table.HeaderCell>Maksimum Maaş</Table.HeaderCell>
+                        <Table.HeaderCell>Şehir</Table.HeaderCell>
                         <Table.HeaderCell>Son Başvuru Tarihi</Table.HeaderCell>
                         <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
@@ -44,6 +52,7 @@ export default function JobAdvertisementList() {
                             <Table.Cell>{jobAdvertisement.quota}</Table.Cell>
                             <Table.Cell>{jobAdvertisement.minSalary}</Table.Cell>
                             <Table.Cell>{jobAdvertisement.maxSalary}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.city_id}</Table.Cell>
                             <Table.Cell>{jobAdvertisement.applicationDeadLine}</Table.Cell><Table.Cell><Button color={"white"} ><Link to={`/jobAdvertisement/${jobAdvertisement.description}`}>DETAY</Link></Button></Table.Cell>
                             </Table.Row>
                         ))
