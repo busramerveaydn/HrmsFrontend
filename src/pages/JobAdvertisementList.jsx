@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import JobadvertisementServices from '../services/jobadvertisementService'
-import {Table } from 'semantic-ui-react'
+import {Button, Table } from 'semantic-ui-react'
+import {Link} from "react-router-dom";
+
+
+
 
 export default function JobAdvertisementList() {
 
+
+
     const [jobAdvertisements, setJobAdvertisements] = useState([])
 
+    //compannet yüklendiğinde yapılması istenen kod yazılır.
     useEffect(() => {
         let jobadvertisementService = new JobadvertisementServices()
         jobadvertisementService.getJobAdvertisements().then(result => {
             setJobAdvertisements(result.data.data)
         })
     }, [])
+
 
     return (
         <div>
@@ -23,6 +31,7 @@ export default function JobAdvertisementList() {
                         <Table.HeaderCell>Minimum Maaş</Table.HeaderCell>
                         <Table.HeaderCell>Maksimum Maaş</Table.HeaderCell>
                         <Table.HeaderCell>Son Başvuru Tarihi</Table.HeaderCell>
+                        <Table.HeaderCell></Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
@@ -35,7 +44,7 @@ export default function JobAdvertisementList() {
                             <Table.Cell>{jobAdvertisement.quota}</Table.Cell>
                             <Table.Cell>{jobAdvertisement.minSalary}</Table.Cell>
                             <Table.Cell>{jobAdvertisement.maxSalary}</Table.Cell>
-                            <Table.Cell>{jobAdvertisement.applicationDeadLine}</Table.Cell>
+                            <Table.Cell>{jobAdvertisement.applicationDeadLine}</Table.Cell><Table.Cell><Button color={"white"} ><Link to={`/jobAdvertisement/${jobAdvertisement.description}`}>DETAY</Link></Button></Table.Cell>
                             </Table.Row>
                         ))
                     }
