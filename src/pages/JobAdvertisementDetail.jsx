@@ -25,9 +25,9 @@ export default function JobAdvertisementDetail() {
                             src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
                         />
                         <Card.Header>{job.description}</Card.Header>
-                        <Card.Meta>İş İlanı</Card.Meta>
+                        <Card.Meta><strong>KODLAMAIO</strong></Card.Meta>
                         <Card.Description>
-                            Steve wants to add you to the group <strong>best friends</strong>
+                            JAVA bilen
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -36,7 +36,7 @@ export default function JobAdvertisementDetail() {
                                 Başvur
                             </Button>
                             <Button basic color='red'>
-                                Favorilere Ekle
+                                Kaydet
                             </Button>
                         </div>
                     </Card.Content>

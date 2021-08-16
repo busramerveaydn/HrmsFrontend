@@ -7,7 +7,7 @@ export default function Sidebar() {
             <Menu inverted vertical >                
                 <Menu.Item name='Job Advertisements' icon="labeled" position="center">
                     <Icon name="list" />
-                    <Label color='blue'>51</Label>
+                    <Label color='blue'>2</Label>
         İş İlanları
         </Menu.Item>
                 <Menu.Item name='Employees' icon="labeled" position="center">
@@ -17,7 +17,7 @@ export default function Sidebar() {
         </Menu.Item>
                 <Menu.Item name='Recorded' icon="labeled" position="center">
                     <Icon name="bookmark" />
-                    <Label color='red'>3</Label>
+                    <Label color='red'>1</Label>
           Kaydedilenler
         </Menu.Item>
                 <Menu.Item name='Users' icon="labeled" position="center">

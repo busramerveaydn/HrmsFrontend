@@ -1,11 +1,12 @@
 import React from 'react'
-import { Dropdown, Menu } from 'semantic-ui-react'
+import {Dropdown, Image, Menu} from 'semantic-ui-react'
 import { Icon, Label } from 'semantic-ui-react'
 
 export default function SignedIn(props) {
     return (
         <div>
             <Menu.Item>
+                <Image avatar spaced="right" src={"https://avatars.githubusercontent.com/u/32596414?"}/>
                 <Dropdown pointing="top left" text="Büşra merve Aydın">
                     
                     <Dropdown.Menu>
