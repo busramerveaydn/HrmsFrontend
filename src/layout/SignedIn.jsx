@@ -15,7 +15,7 @@ export default function SignedIn(props) {
                     <Dropdown.Item>
                         Mesajlar <br /><br />
                         <Label>
-                            <Icon name='mail' /> 23
+                            <Icon name='mail' /> 2
                              </Label>
                     </Dropdown.Item>
                     <Dropdown.Item>Ayarlar</Dropdown.Item>
