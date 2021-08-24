@@ -5,6 +5,8 @@ import JobAdvertisementList from '../pages/JobAdvertisementList'
 import {Route} from "react-router-dom";
 import JobAdvertisementDetail from "../pages/JobAdvertisementDetail";
 import {ToastContainer} from "react-toastify";
+import CityLists from "../pages/CityLists";
+import Register from "../pages/Register";
 
 export default function Dashboard() {
     return (
@@ -18,7 +20,7 @@ export default function Dashboard() {
                         <Grid.Column width={12}>
                             <Route exact path = "/" component={JobAdvertisementList}/>
                             <Route exact path = "/jobAdvertisement" component={JobAdvertisementList}/>
-                            <Route path = "/jobAdvertisement/:description" component={JobAdvertisementDetail}/>
+                            <Route path = "/jobAdvertisement/:id" component={JobAdvertisementDetail}/>
                         </Grid.Column>
                     </GridRow>
                 </Grid>

@@ -25,9 +25,9 @@ export default function JobAdvertisementDetail() {
                             src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
                         />
                         <Card.Header>{job.description}</Card.Header>
-                        <Card.Meta><strong>KODLAMAIO</strong></Card.Meta>
+                        <Card.Meta><strong>HRMS</strong></Card.Meta>
                         <Card.Description>
-                            JAVA bilen
+                            Description
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
