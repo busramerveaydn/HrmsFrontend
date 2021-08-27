@@ -1,5 +1,6 @@
 import React from "react";
 import {Dropdown, Input} from "semantic-ui-react";
+import CandidateList from "../../pages/CandidateList";
 
 const tagOptions =[
     {

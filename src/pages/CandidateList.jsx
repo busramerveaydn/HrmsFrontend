@@ -3,7 +3,9 @@ import CandidateServices from "../services/candidateService";
 import { Table } from "semantic-ui-react";
 
 export default function CandidateList() {
+
     const [candidateLists, setcandidateLists] = useState([]);
+
 
     useEffect(() => {
         let candidateService = new CandidateServices();
