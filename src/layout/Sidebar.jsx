@@ -13,7 +13,7 @@ export default function Sidebar() {
     return (
         <div>
         <Menu inverted vertical >
-                <Menu.Item name='Job Advertisements' icon="labeled" position="center">
+                <Menu.Item as={Link} to={"/jobAdvertisement"} name='Job Advertisements' icon="labeled" position="center">
                     <Icon name="list" />
                     <Label color='blue'>2</Label>
         İş İlanları
@@ -23,11 +23,11 @@ export default function Sidebar() {
                     <Label color='black'></Label>
           İş Verenler
         </Menu.Item>
-                <Menu.Item name='Recorded' icon="labeled" position="center">
-                    <Icon name="bookmark" />
-                    <Label color='red'>1</Label>
-          Kaydedilenler
-        </Menu.Item>
+          {/*      <Menu.Item name='Recorded' icon="labeled" position="center">*/}
+          {/*          <Icon name="bookmark" />*/}
+          {/*          <Label color='red'>1</Label>*/}
+          {/*Kaydedilenler*/}
+        {/*</Menu.Item>*/}
                 <Menu.Item name='Users' icon="labeled" position="center">
                     <Icon name="user" />
                     <Label color='black'></Label>

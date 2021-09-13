@@ -19,25 +19,25 @@ export default function Navi() {
     }
     return (
         <div>
-            {/*<Menu inverted >*/}
-            {/*    <Container>*/}
+            <Menu inverted >
+                <Container>
 
-            {/*        <Menu.Item*/}
-            {/*            icon="home"*/}
-            {/*            name='Ana Sayfa'*/}
-            {/*        />*/}
-            {/*        <Menu.Item*/}
-            {/*            icon='add circle'*/}
-            {/*            name ='Add Users'*/}
-            {/*        />*/}
-            {/*        <Menu.Item><CitiesList/></Menu.Item>*/}
-            {/*        <Menu.Menu position='right'>*/}
-            {/*            <Menu.Item>*/}
-            {/*                {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut singIn={handleSignIn} />}*/}
-            {/*        </Menu.Item>*/}
-            {/*        </Menu.Menu>*/}
-            {/*    </Container>*/}
-            {/*</Menu>*/}
+                    <Menu.Item
+                        icon="home"
+                        name='Ana Sayfa'
+                    />
+                    <Menu.Item
+                        icon='add circle'
+                        name ='Add Users'
+                    />
+                    <Menu.Item><CitiesList/></Menu.Item>
+                    <Menu.Menu position='right'>
+                        <Menu.Item>
+                            {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut singIn={handleSignIn} />}
+                    </Menu.Item>
+                    </Menu.Menu>
+                </Container>
+            </Menu>
         </div>
     )
 }
